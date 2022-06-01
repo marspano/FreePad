@@ -20,3 +20,10 @@ jobs:
 
     - name: Build
       run: ./build.sh
+      
+    - name: Upload the build output
+      uses: actions/upload-artifact@v2
+      with:
+        name: build-output
+        path: dist/*
+        retention-days: 3
